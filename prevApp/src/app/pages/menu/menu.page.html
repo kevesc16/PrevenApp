@@ -1,0 +1,65 @@
+<!--Cabecera-->
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbarcolor">
+    <ion-button (click)="logOut()" slot="end" class="btnM">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-button>
+    <ion-button (click)="toggle()" slot="start" class="btnM">
+      <ion-icon name="menu-outline"></ion-icon>
+    </ion-button>
+    <ion-title>Menú</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--Cabecera termino-->
+<!--Menu Perfil-->
+  <ion-menu contentId="main-content" class="colorFondo">
+    <ion-header>
+      <ion-toolbar class="toolbarcolor">
+        <ion-icon class="icon" name="close-circle-outline" slot="end" (click)="cerrarMenu()"></ion-icon>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding" scrollY="false">
+
+          <ion-item (click)="perfil()" class="itemPerfil" >
+            <ion-icon style="padding-right: 10px;color: black ; font-size: 50px;" name="person-circle-outline"></ion-icon>
+            <h3>Perfíl</h3>
+          </ion-item>
+
+    </ion-content>
+  </ion-menu>
+<!--Menu Perfil termino-->
+<!--Toolbar perfil menu-->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</div>
+<!--Tollbar menu termino-->
+<!--Botones menu-->
+<ion-content [fullscreen]="true" class="colorFondo" >
+<ng-container *ngIf="!loading">
+  <div class="card-container">
+  <ng-container *ngFor="let m of menuArray" >
+      <ion-card [routerLink]="m.url" *ngIf="!m.disabled" >
+        <div class="box">
+          <ion-icon id="a" [name]="m.icono" style="font-size: 36px" class="colorcard"></ion-icon>
+          <h3 id="a" class="colorcard">{{m.titulo}}</h3>
+        </div>
+      </ion-card>
+
+      <!--ion-card [routerLink]="m.url" *ngIf="!m.disabled"  >
+        <div class="box">
+          <ion-icon id="a" [name]="m.icono" style="font-size: 36px" class="colorcard"></ion-icon>
+          <h3 id="a" class="colorcard">{{m.titulo}}</h3>
+        </div>
+      </ion-card-->
+  </ng-container>
+  </div>
+</ng-container>
+</ion-content>

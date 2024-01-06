@@ -1,0 +1,55 @@
+<!--cabecera-->
+<ion-header>
+  <ion-toolbar class="toolbarcolor">
+    <ion-title class="text-center">Realizar Inspección </ion-title>
+      <ion-buttons slot="start" (click)="goBack()">
+        <ion-icon name="chevron-back-circle-outline"class="icon"></ion-icon>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--cabecera termino-->
+<ion-content [fullscreen]="true" class="colorFondo">
+  <div class="container">
+
+    <ion-item >
+      <ion-select  placeholder="Importancia">
+        <ion-select-option value="alta">Alta</ion-select-option>
+        <ion-select-option value="media">Media</ion-select-option>
+        <ion-select-option value="baja">Baja</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item >
+      <ion-select  placeholder="Tipo de operación...">
+        <ion-select-option value="observacion">Observación</ion-select-option>
+        <ion-select-option value="inspeccion">Inspección</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item >
+      <ion-select  placeholder="Empresa que realiza la inspección...">
+        <ion-select-option value="la casa">La casa</ion-select-option>
+        <ion-select-option value="sotremaq">Sotremaq</ion-select-option>
+        <ion-select-option value="gamers">Gamers club</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Ubicación</ion-label>
+      <ion-input type="text"placeholder="Lugar de la inspección"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select  placeholder="Realizada por...">
+        <ion-select-option value="prevencionista">Prevencionista</ion-select-option>
+        <ion-select-option value="ingeniero">Igeniero</ion-select-option>
+        <ion-select-option value="constructor">Constructor</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea type="text"placeholder="Descripción del procedimiento realizado."></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="full" class="color"  shape="round">Fotito
+
+    </ion-button>
+
+  </div>
+</ion-content>

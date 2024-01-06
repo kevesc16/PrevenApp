@@ -1,0 +1,38 @@
+<!--cabecera-->
+<ion-header>
+  <ion-toolbar class="toolbarcolor">
+    <ion-title>Prevencion App</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--termino cabecera-->
+<!--contenido-->
+<ion-content [fullscreen]="true" class="colorFondo">
+  <ion-card>
+    <ion-card-content>
+      <ion-label class="login-label">Iniciar sesión</ion-label>
+      <ion-item>
+        <ion-label position="start">Email:</ion-label>
+        <ion-input [(ngModel)]="email" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="start">Contraseña:</ion-label>
+        <ion-input [(ngModel)]="contrasena" type="password"></ion-input>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col size="12" size-md="4">
+        <ion-button (click)="login()" expand="full" shape="round" class="btn">Acceder</ion-button>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-button (click)="register()" expand="full" shape="round" class="btn">Registrarse</ion-button>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-button (click)="resset()" expand="full" shape="round" class="btn">Recuperar contraseña</ion-button>
+      </ion-col>
+        <!--ion-col size="12" size-md="4">
+          <ion-button (click)="descarga()" expand="full" shape="round" class="btn">Descarga nuestra app!</ion-button>
+      </!--ion-col-->
+    </ion-row>
+  </ion-card>
+</ion-content>

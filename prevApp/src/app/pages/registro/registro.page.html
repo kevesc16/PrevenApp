@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar class="toolbarcolor">
+    <ion-title class="text-center">Registro </ion-title>
+      <ion-buttons slot="start" (click)="goBack()">
+        <ion-icon name="chevron-back-circle-outline"class="icon"></ion-icon>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--cabecera termino-->
+<!--contenido-->
+<ion-content [fullscreen]="true" class="colorFondo">
+  <!--cabecera-->
+  <div class="container" *ngIf="!loading">
+  <ng-container>
+  <ion-item>
+    <ion-label position="floating">Correo Electrónico</ion-label>
+    <ion-input type="email" [(ngModel)]="correo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+  </ion-item>
+
+<ion-button class="color" (click)="registro()"  shape="round">Registrar</ion-button>
+</ng-container>

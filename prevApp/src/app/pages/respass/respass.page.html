@@ -1,0 +1,26 @@
+<!--cabecera-->
+<ion-header>
+  <ion-toolbar class="toolbarcolor">
+    <ion-title class="text-center">Cambiar Contraseña</ion-title>
+      <ion-buttons slot="start" (click)="goBack()">
+        <ion-icon name="chevron-back-circle-outline"class="icon"></ion-icon>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--cabecera termino-->
+<!--contenido-->
+<ion-content [fullscreen]="true" class="colorFondo">
+  <div class="container" *ngIf="!loading">
+    <ng-container>
+      <h3>Ingrese su correo <br>para cambiar <br>su contraseña </h3>
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input type="email" [(ngModel)]="correo"></ion-input>
+      </ion-item>
+
+      <div class="ion-text-center">
+        <ion-button class="color" (click)="conf()"shape="round">enviar</ion-button>
+      </div>
+    </ng-container>
+</div>
+<!--contenido-->
