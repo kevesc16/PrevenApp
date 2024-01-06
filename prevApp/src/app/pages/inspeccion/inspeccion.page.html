@@ -12,20 +12,20 @@
   <div class="container">
 
     <ion-item >
-      <ion-select  placeholder="Importancia">
+      <ion-select  placeholder="Importancia"[(ngModel)]="importancia">
         <ion-select-option value="alta">Alta</ion-select-option>
         <ion-select-option value="media">Media</ion-select-option>
         <ion-select-option value="baja">Baja</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item >
-      <ion-select  placeholder="Tipo de operación...">
+      <ion-select  placeholder="Tipo de operación..."[(ngModel)]="tipo">
         <ion-select-option value="observacion">Observación</ion-select-option>
         <ion-select-option value="inspeccion">Inspección</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item >
-      <ion-select  placeholder="Empresa que realiza la inspección...">
+      <ion-select  placeholder="Empresa que realiza la inspección..." [(ngModel)]="empresa" >
         <ion-select-option value="la casa">La casa</ion-select-option>
         <ion-select-option value="sotremaq">Sotremaq</ion-select-option>
         <ion-select-option value="gamers">Gamers club</ion-select-option>
@@ -33,10 +33,10 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">Ubicación</ion-label>
-      <ion-input type="text"placeholder="Lugar de la inspección"></ion-input>
+      <ion-input type="text" [(ngModel)]="ubicacion" placeholder="Lugar de la inspección"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-select  placeholder="Realizada por...">
+      <ion-select  placeholder="Realizada por..."[(ngModel)]="persona">
         <ion-select-option value="prevencionista">Prevencionista</ion-select-option>
         <ion-select-option value="ingeniero">Igeniero</ion-select-option>
         <ion-select-option value="constructor">Constructor</ion-select-option>
@@ -44,12 +44,17 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">Descripción</ion-label>
-      <ion-textarea type="text"placeholder="Descripción del procedimiento realizado."></ion-textarea>
+      <ion-textarea type="text"placeholder="Descripción del procedimiento realizado." [(ngModel)]="descripcion"></ion-textarea>
     </ion-item>
-
-    <ion-button expand="full" class="color"  shape="round">Fotito
-
-    </ion-button>
-
+    <div style="display: flex; justify-content: space-between;">
+      <ion-button style="width: 45%;" expand="full" class="color" (click)="takePicture()" shape="round">Tomar Fotito</ion-button>
+      <ion-button style="width: 45%;" expand="full" class="color" (click)="selectPictureFromGallery()" shape="round">Seleccionar Fotito</ion-button>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <ion-button>Subir inspección</ion-button>
+    </div>
+  </div>
+  <div *ngFor="let photo of photo">
+    <img [src]="photo" />
   </div>
 </ion-content>

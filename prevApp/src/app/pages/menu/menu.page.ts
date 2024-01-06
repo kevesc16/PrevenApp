@@ -23,7 +23,8 @@ export class MenuPage implements OnInit {
   menuArray:Menu[]=[]
   loading:boolean= true;
 
-  constructor(  private router: Router,
+  constructor(
+    private router: Router,
     private animationCtrl: AnimationController,
     private helper:HelperService,
     private menuCtrl:MenuController,
@@ -44,14 +45,29 @@ export class MenuPage implements OnInit {
   this.loading= false;
 
   cargarMenu(){
-    var par=456
+
     this.menuArray.push(
       {
         id:1,
-        titulo:"Inpeccionar",
+        titulo:"Inspeccionar",
         url:"/"+"inspeccion",
         icono:"search-outline",
-    })
+    },
+      {
+        id:2,
+        titulo:"Mis Inspecciones",
+        url:"/"+"inspecciones",
+        icono:"add-circle-outline",
+      },
+      {
+        id:3,
+        titulo:"Inspecciones",
+        url:"/"+"",
+        icono:"person-circle-outline",
+      }
+
+
+    )
   }
 
 
@@ -64,7 +80,7 @@ const emailFirebaseUser= await this.auth.currentUser;
 //console.log("Usuarios de storage",users);
 const userFilter = users.filter(e => e.correo == emailFirebaseUser?.email)
 //console.log("Usuario filtrado",userFilter[0].nombre);
-await this.helper.showToast("Bienvenid@ "+userFilter[0].correo);
+await this.helper.showToast("Bienvenid@ "+userFilter[0].nombre);
 }
 
 async logOut() {

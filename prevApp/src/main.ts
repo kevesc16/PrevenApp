@@ -1,8 +1,16 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+// Call the element loader before the bootstrapModule/bootstrapApplication call
+
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+
+defineCustomElements(window);
+if (environment.production) {
+  enableProdMode();
+}
 
 if (environment.production) {
   enableProdMode();

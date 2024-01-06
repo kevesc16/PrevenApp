@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar class="toolbarcolor">
+    <ion-buttons slot="start">
+      <ion-button class="iconbackcolor" (click)="goBack()">
+        <ion-icon name="chevron-back-circle-outline" class="icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="text-center" style=" padding-left: 125px;">Perfíl</ion-title>
+    <ion-buttons slot="end"></ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--termino cabecera-->
+<!--contenido-->
+<!--boton mas info-->
+<ion-content [fullscreen]="true" class="colorFondo">
+  <div *ngFor="let i of usuario">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img
+          alt="Silhouette of a person's head"
+          src="https://ionicframework.com/docs/img/demos/avatar.svg"
+        />
+      </ion-avatar>
+      <ion-label>{{i.nombre}}</ion-label>
+      <small>{{i.correo}}</small>
+    </ion-item>
+    <ion-button expand="block" (click)="setOpen(true)" class="mostrarD"
+      >Más información
+      <ion-icon [name]="infoIcon" slot="icon-only"></ion-icon>
+    </ion-button>
+  </div>
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <!--termino boton mas info-->
+      <!--boton-->
+      <ion-header>
+        <ion-toolbar class="masToolbar">
+          <ion-buttons slot="start">
+            <ion-button class="iconbackcolor" (click)="setOpen(false)">
+              <ion-icon
+                name="chevron-back-circle-outline"
+                class="icon"
+              ></ion-icon>
+            </ion-button>
+            <ion-title class="text-center">Datos de usuario</ion-title>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <!--boton termino-->
+      <!--mas info-->
+      <ion-content class="sumergemeeee">
+        <div *ngFor="let i of usuario">
+          <ion-card class="vamoAlaIglesia">
+            <ion-card-header>
+              <ion-card-title>{{"Nombre: "+ ' ' +i.nombre}}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-header>
+              <ion-card-title>{{"Correo: "+ ' ' +i.correo}}</ion-card-title>
+            </ion-card-header>
+
+            <!--ion-card-header>
+              <ion-card-title>{{"Nacionalidad: "+ ' ' +i.nacionalidad}}</ion-card-title
+              >
+            </!--ion-card-header>
+
+            <ion-card-header>
+              <ion-card-title>{{"Comuna: "+ ' ' +i.comuna}}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-header--
+              <ion-card-title>{{"Region: "+ ' ' +i.region}}</ion-card-title>
+            </ion-card-header-->
+          </ion-card>
+        </div>
+      </ion-content>
+      <!--mas info termino-->
+    </ng-template>
+  </ion-modal>
+</ion-content>
+<!--termino contenido-->

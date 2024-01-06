@@ -5,6 +5,7 @@ const storageUsuario = "usuarioData";
   providedIn: 'root'
 })
 export class StorageService {
+  userCorreo: any;
 
   constructor() { }
 

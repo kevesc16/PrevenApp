@@ -21,6 +21,7 @@ export class LoginPage implements OnInit {
   contrasena:string="";
   loading: boolean = true;
   helper: any;
+  showPassword = false;
 
   simularCargaMenu =()=>
   this.loading= false;
@@ -28,6 +29,10 @@ export class LoginPage implements OnInit {
 
 ngOnInit() {
   setTimeout(this.simularCargaMenu,2000);
+}
+
+togglePassword() {
+  this.showPassword = !this.showPassword;
 }
 
 async login(){

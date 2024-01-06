@@ -12,13 +12,20 @@
   <!--cabecera-->
   <div class="container" *ngIf="!loading">
   <ng-container>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
   <ion-item>
     <ion-label position="floating">Correo Electrónico</ion-label>
     <ion-input type="email" [(ngModel)]="correo"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Contraseña</ion-label>
-    <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+    <ion-input type="{{showPassword ? 'text' : 'password'}}" [(ngModel)]="contrasena"></ion-input>
+    <ion-button slot="end" (click)="togglePassword()">
+      <ion-icon name="{{showPassword ? 'eye-off-outline' : 'eye-outline'}}"></ion-icon>
+    </ion-button>
   </ion-item>
 
 <ion-button class="color" (click)="registro()"  shape="round">Registrar</ion-button>

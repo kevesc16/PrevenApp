@@ -1,0 +1,44 @@
+<!--cabecera-->
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbarcolor">
+    <ion-title class="text-center">Mis Inspecciones</ion-title>
+    <ion-buttons slot="start" (click)="goBack()">
+      <ion-icon name="chevron-back-circle-outline" class="icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--cabecera termino-->
+<!--contenido-->
+<ion-content [fullscreen]="true" class="colorFondo">
+  <!--cabecera cont-->
+
+  <!--termino cont-->
+  <ion-content class="colorFondo">
+    <ion-card  (click)="alerta()" class="vamoAlaIglesia">
+      <ion-card-header>
+        <!--ion-card-title class="vamoAlaIglesia">{{'Conductor:'+' '+ i.conductor }}</-ion-card-title-->
+      </ion-card-header>
+
+      <!--ion-card-content>
+        {{'Costo:'+' '+ i.costo }} <br />
+        {{'Marca:'+' '+ i.marca }} <br />
+        {{'Patente: '+' '+ i.patente }}
+      </!--ion-card-content>
+    </ion-card>
+      <hr-->
+    </ion-card>
+
+
+
+  <ng-container *ngIf="loading">
+    <div class="box-skeleton" *ngFor="let skeleton of [1]">
+      <ion-skeleton-text
+        class="skeleton"
+        [animated]="true"
+        style="width: 100%"
+      ></ion-skeleton-text>
+    </div>
+  </ng-container>
+</ion-content>
+</ion-content>
+<!--termino contenido-->

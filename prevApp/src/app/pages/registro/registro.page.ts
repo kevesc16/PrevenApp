@@ -13,9 +13,9 @@ import { StorageService } from 'src/app/services/storage.service';
 export class RegistroPage implements OnInit {
   nombre: string = '';
   correo: string = '';
-  nacionalidad:string='';
   contrasena: string = '';
   loading: boolean = true;
+  showPassword = false;
 
 
   constructor(
@@ -50,11 +50,19 @@ export class RegistroPage implements OnInit {
       this.router.navigateByUrl('login');
     }
   }
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
 
   async registro() {
     const loader = await this.helper.showLoader('Cargando');
 
     try {
+      if (this.nombre === '') {
+        await loader.dismiss();
+        await this.helper.showAlert('Debe ingresar un nombre', 'Error');
+        return;
+      }
       if (this.contrasena === '') {
         await loader.dismiss();
         await this.helper.showAlert('Debe ingresar una contraseña', 'Error');
@@ -65,11 +73,7 @@ export class RegistroPage implements OnInit {
         await this.helper.showAlert('Debe ingresar un correo', 'Error');
         return;
       }
-      /*if (this.nombre === '') {
-        await loader.dismiss();
-        await this.helper.showAlert('Debe ingresar un nombre', 'Error');
-        return;
-      }*/
+
 
 
       await loader.dismiss();
@@ -77,6 +81,7 @@ export class RegistroPage implements OnInit {
 
       var user = [
         {
+          nombre:this.nombre,
           correo: this.correo,
           contraseña:this.contrasena
         }

@@ -38,6 +38,14 @@ const routes: Routes = [
     canActivate:[AngularFireAuthGuard],data:{authGuardPipe:redirectLLog},
     loadChildren: () => import('./pages/inspeccion/inspeccion.module').then( m => m.InspeccionPageModule)
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'inspecciones',
+    loadChildren: () => import('./pages/inspecciones/inspecciones.module').then( m => m.InspeccionesPageModule)
+  },
 ];
 
 @NgModule({

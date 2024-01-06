@@ -16,7 +16,10 @@
       </ion-item>
       <ion-item>
         <ion-label position="start">Contraseña:</ion-label>
-        <ion-input [(ngModel)]="contrasena" type="password"></ion-input>
+        <ion-input [(ngModel)]="contrasena" type="{{showPassword ? 'text' : 'password'}}"></ion-input>
+        <ion-button (click)="togglePassword()">
+          <ion-icon name="{{showPassword ? 'eye-off-outline' : 'eye-outline'}}"></ion-icon>
+        </ion-button>
       </ion-item>
     </ion-card-content>
 

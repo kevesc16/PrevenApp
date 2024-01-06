@@ -1,4 +1,4 @@
-export interface insperccion {
-  
+export interface inspeccion {
+
 }
 
