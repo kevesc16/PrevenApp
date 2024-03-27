@@ -14,19 +14,23 @@
 
   <!--termino cont-->
   <ion-content class="colorFondo">
-    <ion-card  (click)="alerta()" class="vamoAlaIglesia">
+    <ion-card *ngFor="let i of inspecciones" (click)="alerta()" class="vamoAlaIglesia">
       <ion-card-header>
-        <!--ion-card-title class="vamoAlaIglesia">{{'Conductor:'+' '+ i.conductor }}</-ion-card-title-->
+        <ion-card-title class="vamoAlaIglesia">{{'Nombre de quien realizó el procedimiento:'+ ' ' + i.nombre}}
+        </ion-card-title>
       </ion-card-header>
 
-      <!--ion-card-content>
-        {{'Costo:'+' '+ i.costo }} <br />
-        {{'Marca:'+' '+ i.marca }} <br />
-        {{'Patente: '+' '+ i.patente }}
-      </!--ion-card-content>
+      <ion-card-content>
+        {{'Importancia:'+' '+ i.importancia }} <br />
+        {{'Tipo de Operación:'+' '+ i.tipo }} <br />
+        {{'Empresa que realiza la inspección:'+' '+ i.empresa }}<br />
+        {{'Ubicación:'+' '+ i.ubicacion }}<br />
+        {{'Realizada por:'+' '+ i.persona }}<br />
+        {{'Descripción:'+' '+ i.descripcion }}<br />
+      </ion-card-content>
     </ion-card>
-      <hr-->
-    </ion-card>
+
+
 
 
 

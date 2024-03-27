@@ -12,6 +12,7 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class InspeccionesPage implements OnInit {
   loading:boolean= true;
+  inspecciones:any[]=[];
 
   constructor(
     private router:Router,
@@ -33,18 +34,30 @@ export class InspeccionesPage implements OnInit {
     this.cargarInfoIns();
     setTimeout(this.simularCargaMenu,1500);
   }
+ /* async cargarInfoIns() {
+    try {
+      const inspecciones = await this.storage.obtenerInspecciones();
+      console.log('Inspecciones', inspecciones);
+      this.inspecciones = inspecciones;
+    } catch (error) {
+      console.error('Error al cargar las inspecciones:', error);
+    }
+  }*/
   async cargarInfoIns() {
-    const autos = await this.storage;
-    console.log("Autos:", autos);
-    //this.autos = autos;
+    try {
+      this.inspecciones = await this.storage.obtenerInspecciones();
+      console.log(this.inspecciones);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   async alerta(){
-    let confirmar= await this.helper.showConfirm("Desea confirmar el viaje?","Si","No")
-    if(confirmar== true){
-      this.helper.showAlert("Su UberFruna ha sido contactado!","Aceptar")
-      this.router.navigate(['menu/:correo']);
-    }
+   // let confirmar= await this.helper.showConfirm("Desea confirmar el viaje?","Si","No")
+    //if(confirmar== true){
+      this.helper.showAlert("Weeeenaaaaaa!","Aceptar")
+      this.router.navigate(['menu']);
+
   }
 
 }

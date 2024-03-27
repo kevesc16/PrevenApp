@@ -64,6 +64,7 @@ export class MenuPage implements OnInit {
         titulo:"Inspecciones",
         url:"/"+"",
         icono:"person-circle-outline",
+        disabled:true
       }
 
 

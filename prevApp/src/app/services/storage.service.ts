@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Preferences } from '@capacitor/preferences';
 const storageUsuario = "usuarioData";
+const StorageInspeccion="inspeccionData";
 @Injectable({
   providedIn: 'root'
 })
@@ -50,8 +51,26 @@ async getNombreUsuario(): Promise<string | null> {
   return this.getItem('nombreUsuario');
 }
 
+async agregarInspeccion(inspeccion: any) {
+  const inspeccionData = await this.obtenerInspecciones();
+  inspeccionData.push(inspeccion);
+  this.setItem('inspecciones', JSON.stringify(inspeccionData));
+}
+
+async obtenerInspecciones(): Promise<any[]> {
+  const inspeccionData = await this.getItem('inspecciones');
+  if (inspeccionData== null) {
+    return [];
+  }
+  const data:any[]=JSON.parse(inspeccionData)
+  if (data) {
+    return data;
+}else{
+  return [];
+}
 
   }
+}
 
 
 
