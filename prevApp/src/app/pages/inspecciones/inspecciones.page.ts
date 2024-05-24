@@ -34,7 +34,7 @@ export class InspeccionesPage implements OnInit {
     this.cargarInfoIns();
     setTimeout(this.simularCargaMenu,1500);
   }
- /* async cargarInfoIns() {
+ /*async cargarInfoIns() {
     try {
       const inspecciones = await this.storage.obtenerInspecciones();
       console.log('Inspecciones', inspecciones);

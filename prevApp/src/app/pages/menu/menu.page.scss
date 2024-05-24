@@ -1,3 +1,22 @@
 .skeleton{
   height: 100px
 }
+ion-toolbar{
+  --background:#141827;
+}
+
+ION-CONTENT{
+  --background: #62455b;
+}
+
+ion-card{
+  background-color: #736681;
+  color:rgb(165, 191, 214);
+}
+
+ion-content{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,9 +1,6 @@
 <!--Cabecera-->
 <ion-header [translucent]="true">
   <ion-toolbar class="toolbarcolor">
-    <!--ion-button (click)="logOut()" slot="end" class="btnM">
-      <ion-icon name="log-out-outline"></ion-icon>
-    </!--ion-button-->
     <ion-button (click)="toggle()" slot="start" class="btnM">
       <ion-icon name="menu-outline"></ion-icon>
     </ion-button>
@@ -12,15 +9,15 @@
 </ion-header>
 <!--Cabecera termino-->
 <!--Menu Perfil-->
-  <ion-menu contentId="main-content" class="colorFondo">
+  <ion-menu contentId="main-content">
     <ion-header>
       <ion-toolbar class="toolbarcolor">
         <ion-icon class="icon" name="close-circle-outline" slot="end" (click)="cerrarMenu()"></ion-icon>
         <ion-title>Menú</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding" scrollY="false">
-
+    <ion-card scrollY="false">
+      <ion-card-content>
           <ion-item (click)="perfil()" class="itemPerfil" >
             <ion-icon style="padding-right: 10px;color: black ; font-size: 50px;" name="person-circle-outline"></ion-icon>
             <h3>Perfíl</h3>
@@ -30,9 +27,8 @@
             <ion-icon  name="close-circle-outline" style="padding-right: 10px;color: black ; font-size: 50px;"></ion-icon>
             <h3>Cerrar Sesión</h3>
           </ion-item>
-
-
-    </ion-content>
+      </ion-card-content>
+    </ion-card>
   </ion-menu>
 <!--Menu Perfil termino-->
 <!--Toolbar perfil menu-->
@@ -48,7 +44,7 @@
 </div>
 <!--Tollbar menu termino-->
 <!--Botones menu-->
-<ion-content [fullscreen]="true" class="colorFondo" >
+<ion-content [fullscreen]="true" >
   <ng-container *ngIf="!loading">
   <div class="card-container">
   <ng-container *ngFor="let m of menuArray" >

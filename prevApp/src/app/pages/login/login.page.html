@@ -1,18 +1,23 @@
 <!--cabecera-->
 <ion-header>
-  <ion-toolbar class="toolbarcolor">
-    <ion-title>Prevencion App</ion-title>
+  <ion-toolbar class="toolbar-background">
+    <ion-title >PrevenApp</ion-title>
   </ion-toolbar>
 </ion-header>
 <!--termino cabecera-->
 <!--contenido-->
-<ion-content [fullscreen]="true" class="colorFondo">
+<ion-content [fullscreen]="true">
+   <!--gif bckground-->
+<video autoplay muted loop id="myVideo">
+  <source src="../../../assets/gif/fondogif2.mp4" type="video/mp4">
+</video>
+<!--gif bckground-->
   <ion-card>
-    <ion-card-content>
-      <ion-label class="login-label">Iniciar sesión</ion-label>
-      <ion-item>
+    <ion-card-content >
+      <ion-label >Iniciar sesión</ion-label>
+      <ion-item >
         <ion-label position="start">Email:</ion-label>
-        <ion-input [(ngModel)]="email" type="text"></ion-input>
+        <ion-input class="colorinput" [(ngModel)]="email" type="text"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="start">Contraseña:</ion-label>

@@ -130,6 +130,7 @@ export class InspeccionPage implements OnInit {
           persona: this.persona
         }
       ]
+      
       await loader.dismiss();
       this.storage.agregarInspeccion(inspeccion);
       await this.helper.showAlert('Inspeccion guardada correctamente','Guardado')
@@ -141,6 +142,8 @@ export class InspeccionPage implements OnInit {
       this.ubicacion="";
       this.descripcion="";
       this.photo=[];
+      console.log('nombre:', this.nombre);
+      console.log('ubicacion:', this.ubicacion);
       await loader.dismiss();
       this.navCtrl.navigateRoot('menu');
       await loader.dismiss();

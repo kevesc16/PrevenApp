@@ -1,0 +1,47 @@
+#myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+  }
+  
+ 
+ion-header{
+    background: rgba(49, 133, 185, 0.164); /* Aumenta la transparencia */
+    border-radius: 10px; /* Añade bordes redondeados */
+    max-width: 200px;
+    width: 100%;
+    margin: 16px;
+}
+ion-toolbar{
+    --background: rgba(19, 124, 189, 0)!important;
+    --border-style: none;
+}
+
+
+ion-label {
+  padding: 10px; /* Ajusta este valor según tus necesidades */
+  color: #ffffff;
+}
+
+ion-card{
+  margin-top: 30%;
+  background-color: #7b9bac;
+}
+ion-row {
+  background-color: #47756ec9; /* Cambia este valor al color que desees */
+}
+
+ion-button {
+  font-size: 15px; /* Ajusta el tamaño del texto */
+  padding: 5px; /* Ajusta el padding del botón */
+  --background:#56813f;
+}
+
+ion-item {
+  margin: 10px 0;
+  --background: #2f2f2f;
+  border-radius: 10px;
+}
